@@ -6,7 +6,7 @@ amqp.connect("amqp://localhost", (error0, connection) => {
   connection.createChannel((error1, channel) => {
     if (error1) throw error1;
 
-    // create the fanout exchange
+    // create the direct exchange
     channel.assertExchange("direct-exchange", "direct", { durable: true });
 
     // publish an message to the exchange
